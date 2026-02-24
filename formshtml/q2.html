@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h2  style="font-family: Arial, Helvetica, sans-serif">Pizza Ordering form</h2>
+    
+    <fieldset>
+        <legend align="center">Pizza Ordering Form</legend>
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" name="firstName">
     <br>
@@ -27,6 +29,7 @@
     <input type="date" id="preferredDeliveryDate" name="preferredDeliveryDate">
     <br>
     <br>
+    <div>
     <label for="size">Size:</label>
     <br>
     <input type="radio" id="small" name="size" value="small">
@@ -35,8 +38,10 @@
     <span>Medium</span>
     <input type="radio" name="size" id="large" value="large">
     <span>Large</span>
+    </div>
     <br>
     <br>
+    <div>
     <label for="flavour">Flavour:</label>
     <br>
     <input type="checkbox" id="margharitaPizza" name="margharitaPizza" value="margharitaPizza">
@@ -70,6 +75,7 @@
            <option value="4">4</option>
            <option value="5">5</option>
        </select>
+    </div>
        <br>
        <br>
        <label for="creditCardNumber">Credit Card Number:</label>
@@ -86,6 +92,9 @@
        <br>
        <br>
        <button type="submit">Submit Order</button>
+    </fieldset>
+
     
+
 </body>
 </html>
