@@ -1,0 +1,18 @@
+*{
+    background-color: pink;
+}
+div{
+    background-color: lightblue;
+}
+.abc{
+    background-color: rgb(169, 82, 162);
+    color: red;
+    border: 5px double black;
+    border-radius: 10px;
+}
+h1{
+    background-color: lightblue;
+}
+#head1{
+    background-color: rgb(169, 82, 162);
+}
