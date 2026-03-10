@@ -1,18 +1,49 @@
 *{
-    background-color: pink;
+    background-color: rgb(244, 227, 230);
 }
 div{
-    background-color: lightblue;
+    background-color: rgb(134, 181, 148);
 }
 .abc{
-    background-color: rgb(169, 82, 162);
-    color: red;
+    background-color: rgb(219, 187, 216);
+    color: rgb(10, 3, 19);
     border: 5px double black;
-    border-radius: 10px;
+    border-radius: 100px;
 }
 h1{
-    background-color: lightblue;
+    background-color: rgb(180, 133, 61);
 }
 #head1{
     background-color: rgb(169, 82, 162);
 }
+#head1
+{
+      background-color: rgb(169, 82, 162);
+      color: red;
+      border: 5px double black;
+      border-radius: 100px;
+    }
+    
+#newDiv
+    {
+      width: 200px;
+      height: 200px;
+      border: 10px solid black;
+      padding: 30px;
+      margin-left:500px;
+       border-radius: 50px;
+
+    }
+    #button
+    {
+        background-color: rgb(195, 112, 112);
+        color: rgb(12, 3, 3);
+        border: 1px solid black;
+        border-radius: 7px;
+        padding: 5px 15px;
+        text-align: center;
+       color:aliceblue
+       
+         margin-right: 500px;  
+
+    }     

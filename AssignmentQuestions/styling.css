@@ -1,9 +1,9 @@
 /* CLASSIC RETRO ACADEMIC THEME */
 
 body{
-    background-color:#e7d09e;
+    background-color:#e4c176;
     font-family: Georgia, "Times New Roman", serif;
-    color:#475557;
+    color:#0a1a1c;
     margin:0;
     padding:40px;
 }
@@ -12,14 +12,14 @@ body{
 /* TABLE */
 
 table{
-    width:80%;
+    width:50%;
     margin:auto;
 
     border-collapse:collapse;
 
-    background-color:#ecc675;
+    background-color:#030506;
 
-    border:2px solid #1c150c;
+    border:2px solid #dddeba;
 
 }
 
@@ -27,9 +27,9 @@ table{
 /* HEADER */
 
 th{
-    background-color:#dfe4ee;
+    background-color:#f3eadb;
 
-    color:#755525ad;
+    color:#a4865aad;
 
     padding:12px;
 
@@ -44,7 +44,7 @@ th{
 /* CELLS */
 
 td{
-    padding:10px;
+    padding:20px;
 
     text-align:center;
 
@@ -59,7 +59,7 @@ tr:nth-child(even){
 }
 
 tr:hover{
-    background-color:#2e200b;
+    background-color:#c4baac;
 }
 
 
@@ -68,7 +68,7 @@ tr:hover{
 input[type="text"]{
     background-color:#d2be8f;
 
-    border:1px solid #a08a6a;
+    border:10px solid #f2e3cd;
 
     padding:4px;
 
@@ -86,14 +86,15 @@ input[type="checkbox"]{
 /* LINKS */
 
 a{
-    color:#5a3e2b;
+    color:#28221f;
 
     text-decoration:none;
 
     font-weight:bold;
 }
 
-a:hover{
+a:hover
+{
     text-decoration:underline;
 }
 
@@ -103,7 +104,7 @@ a:hover{
 footer{
     margin-top:50px;
 
-    background-color:#e8dcc8;
+    background-color:#b59f7a;
 
     padding:25px;
 
@@ -114,7 +115,7 @@ footer{
 /* PROFILE IMAGE */
 
 footer img{
-    border-radius:50%;
+    border-radius:80%;
 
     border:2px solid #8b6f47;
 }

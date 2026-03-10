@@ -1,0 +1,22 @@
+#shadowSample {
+    width: 200px;
+    height: 200px;
+    margin:  100px auto;
+
+    background-color: rgb(215, 224, 228);
+    box-shadow:    10px 10px 10px rgb(150, 146, 146);
+}
+#textSample {
+
+    text-shadow: 0.5px 0.5px 1px rgb(202, 44, 44);
+}
+#btn{
+    background-color: rgb(195, 112, 112);
+    color: rgb(12, 3, 3);
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 5px 15px;
+    text-align: center;
+   color:aliceblue
+   box-shadow: 5px 5px 5px rgb(150, 146, 146);
+}

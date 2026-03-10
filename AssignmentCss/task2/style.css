@@ -1,0 +1,43 @@
+body{
+    margin:150px;
+    padding:0;
+    font-family: Arial;
+    background:#64b35f;
+}
+
+.form-container{
+    background:white;
+    padding:30px;
+    width:300px;
+    border-radius:8px;
+    text-align:center;
+  
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+form input,
+form textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:4px;
+    
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#4caf50;
+    color:white;
+    font-weight:bold;
+    border-radius:20px;
+    
+}
+
+button:hover{
+    background:#3e9442;
+}
