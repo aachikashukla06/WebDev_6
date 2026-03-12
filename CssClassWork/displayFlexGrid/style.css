@@ -1,0 +1,31 @@
+#outerbox{
+    height: 700px;
+    width: 700px;
+    border: 3px solid black;
+}
+#parent1{
+
+    display: grid;
+    grid-template-columns: 150px 200px 150px 200px;
+    justify-items: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.p1child{
+    width: 60px;
+    height: 60px;
+    background-color:rgb(69, 229, 192);
+    border: 1px solid black;
+    color: white;
+    font-size: larger;  
+}
+
+
+#parent2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

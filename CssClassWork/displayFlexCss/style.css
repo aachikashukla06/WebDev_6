@@ -1,0 +1,23 @@
+* {
+    
+}
+#parent1{
+    height: 700px;
+    width: 700px;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: end;
+    flex-direction: column;
+}
+
+.p1child{
+    width: 60px;
+    height: 60px;
+    background-color:blue;
+    border: 1px solid black;
+    color: white;
+    font-size: larger;
+    
+}
