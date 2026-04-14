@@ -1,0 +1,51 @@
+:root{
+    --primary-color:rgb(93, 184, 128);
+    --secondary-color: rgb(152, 195, 198);;
+    --text-color: rgb(101, 110, 210);
+}
+/* globalVariable */
+
+p{
+    color: var(--text-color);
+}
+
+h1{
+    color: var(--secondary-color)
+}
+
+
+h3
+{
+    color: var(--secondary-color);
+}
+p{  
+    --br-radius:5px;
+    color: var(--text-color);
+}
+th{
+    color: var(--primary-color);
+}
+td
+{
+    color:var(--text-color);
+}
+button{
+    --br-radius: 1px solid black;
+    border-radius: 5px;
+    padding:8px 15px ;
+
+
+}
+#login{
+    background-color: var(--primary-color);
+    border-radius: var(--br-radius);
+    
+    
+}
+#register
+{
+    background-color:var(--secondary-color);
+    border-radius: var(--br-radius);
+
+
+}

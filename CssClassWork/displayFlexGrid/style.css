@@ -3,7 +3,7 @@
     width: 700px;
     border: 3px solid black;
 }
-#parent1{
+#parent1{              
 
     display: grid;
     grid-template-columns: 150px 200px 150px 200px;
@@ -20,6 +20,7 @@
     color: white;
     font-size: larger;  
 }
+
 
 
 #parent2{

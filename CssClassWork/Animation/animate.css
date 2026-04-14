@@ -3,8 +3,11 @@
     padding: 0;
 }
 
-@keyframes Aanya {
-    0%{
+@keyframes Aanya
+{   
+    
+    0%
+    {
         top: 0px;
         left: 0px;
     }
@@ -16,6 +19,7 @@
      50%{top: 500px;
         left: 500px; 
      } 
+
     75%{
         top: 500px;
         left: 0px;
@@ -25,7 +29,8 @@
         left: 0px;
     }
 }
-#div2{
+#div2
+{
     width: 100px;
     height: 100px;
     border: 1px solid black;
