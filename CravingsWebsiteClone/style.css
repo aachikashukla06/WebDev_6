@@ -1,10 +1,4 @@
-/* FONT */
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--color-base-100);
-}
-
-/* COLORS */
+/* ===== COLOR PALETTE ===== */
 :root {
   --color-primary: #c2410c;
   --color-primary-content: #ffffff;
@@ -15,17 +9,37 @@ body {
   --color-base-200: #f5ede5;
   --color-base-300: #e7d9c9;
   --color-base-content: #2d1b10;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
 }
 
-/* NAVBAR */
-.navbar-custom {
-  background-color: var(--color-primary);
+/* ===== GLOBAL ===== */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-base-100);
+  color: var(--color-base-content);
 }
 
-/* HERO */
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: var(--color-primary) !important;
+  padding: 16px 60px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--color-primary-content) !important;
+}
+
+.navbar a {
+  color: var(--color-primary-content) !important;
+  font-size: 15px;
+}
+
+/* ===== HERO ===== */
 .hero {
   min-height: 90vh;
-  background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0') center/cover;
+  background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0') center/cover no-repeat;
   position: relative;
 }
 
@@ -34,29 +48,175 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.65);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
 }
 
-/* BUTTON */
-.btn-primary-custom {
+.hero h1 {
+  font-size: 48px;
+  color: var(--color-primary-content);
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--color-neutral-content);
+}
+
+/* ===== BUTTONS ===== */
+.btn-main {
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-primary-content);
+  border-radius: 50px;
+  padding: 10px 28px;
   border: none;
-}
-
-/* CARD HOVER */
-.card:hover {
-  transform: scale(1.03);
+  font-weight: 500;
   transition: 0.3s;
 }
 
-/* FOOTER */
+.btn-main:hover {
+  background-color: #a93405;
+}
+
+.btn-light {
+  background-color: var(--color-primary-content);
+  color: var(--color-base-content);
+  border-radius: 50px;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+  position: relative;
+  max-width: 650px;
+  margin: 20px auto 0;
+}
+
+.search-box input {
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid var(--color-base-300);
+  padding-left: 45px;
+  background-color: var(--color-primary-content);
+}
+
+.search-box i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--color-secondary);
+}
+
+/* ===== RESTAURANTS ===== */
+section h2 {
+  font-size: 28px;
+}
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--color-base-300);
+  background-color: var(--color-base-100);
+  transition: 0.3s;
+}
+
+.card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 18px;
+}
+
+.card h5 {
+  color: var(--color-base-content);
+}
+
+.card p {
+  color: var(--color-secondary);
+  margin-bottom: 6px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* ===== BADGES ===== */
+.badge {
+  background-color: var(--color-base-200);
+  color: var(--color-base-content);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* ===== STATS ===== */
+.bg-light {
+  background-color: var(--color-base-200) !important;
+}
+
+.text-danger {
+  color: var(--color-primary) !important;
+}
+
+/* ===== TESTIMONIAL ===== */
+.shadow {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+/* ===== CTA ===== */
+section[style*="color-primary"] {
+  background-color: var(--color-primary);
+}
+
+/* ===== FOOTER ===== */
 .footer {
   background-color: var(--color-neutral);
   color: var(--color-neutral-content);
+}
+
+.footer h6 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: var(--color-neutral-content);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.footer hr {
+  border-color: #555;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
 }
