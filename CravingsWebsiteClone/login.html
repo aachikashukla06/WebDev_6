@@ -1,31 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Login</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Cravings</title>
+<link rel="stylesheet" href="style.css">
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+
+<!-- Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
 </head>
 
-<body>
+<body class="bg-light">
 
-<div class="container vh-100 d-flex">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark px-5" style="background: var(--color-primary); height:64px;">
+  <div class="container-fluid">
 
-  <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center" style="background:var(--color-primary); color:white;">
-    <h2>Welcome Back!</h2>
-  </div>
+    <a class="navbar-brand fw-bold fs-4" href="#">
+      crav<span style="color:#84cc16">/</span>ng
+    </a>
 
-  <div class="col-md-6 d-flex align-items-center justify-content-center">
-    <div class="w-75">
-      <h3>Login</h3>
-
-      <input class="form-control mb-3" placeholder="Email">
-      <input type="password" class="form-control mb-3" placeholder="Password">
-
-      <button class="btn btn-main w-100">Login</button>
-
-      <p class="mt-3">Don't have account? <a href="register.html">Register</a></p>
+    <div class="ms-auto d-flex align-items-center gap-2">
+      <a href="#" class="text-white text-decoration-none">Login</a>
+      <a href="#" class="btn btn-outline-light btn-close-white py-1">Register</a>
     </div>
+
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="container-fluid p-0">
+
+  <div class="row g-0" style="height: calc(100vh - 64px);">
+
+    <!-- LEFT SIDE IMAGE -->
+    <div class="col-lg-8 d-none d-lg-block"
+      style="background:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061') center/cover;">
+    </div>
+
+    <!-- RIGHT SIDE LOGIN -->
+    <div class="col-lg-4 d-flex align-items-center justify-content-center"
+         style="background: var(--color-base-100);">
+
+      <div class="bg-white p-4 rounded shadow" style="width: 380px;">
+
+        <h3 class="fw-bold mb-1" style="color: var(--color-primary);">
+          Welcome Back
+        </h3>
+
+        <p class="text-muted mb-4">
+          Login to your Cravings account
+        </p>
+
+        <!-- EMAIL -->
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="Enter your email">
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="mb-3 position-relative">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control pe-5" placeholder="Enter your password">
+          <i class="bi bi-eye position-absolute"
+             style="right:15px; top:38px; color:gray;"></i>
+        </div>
+
+        <!-- OPTIONS -->
+        <div class="d-flex justify-content-between align-items-center mb-3 small">
+          <div>
+            <input type="checkbox"> Remember me
+          </div>
+          <a href="#" style="color: var(--color-primary);">Forgot Password?</a>
+        </div>
+
+        <!-- BUTTON -->
+        <button class="btn w-100 text-white fw-semibold"
+                style="background: var(--color-primary);">
+          Login
+        </button>
+
+        <!-- DIVIDER -->
+        <div class="text-center my-3 text-muted small position-relative">
+          <span class="bg-white px-2">Don't have an account?</span>
+          <hr style="margin-top:-10px;">
+        </div>
+
+        <!-- LINK -->
+        <div class="text-center">
+          <a href="#" style="color: var(--color-primary); font-weight:500;">
+            Create an account
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
 </div>

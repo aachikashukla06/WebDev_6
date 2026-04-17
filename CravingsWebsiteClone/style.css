@@ -220,3 +220,7 @@ section[style*="color-primary"] {
     font-size: 14px;
   }
 }
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-primary);
+}
