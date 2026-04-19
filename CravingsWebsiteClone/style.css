@@ -206,6 +206,35 @@ section[style*="color-primary"] {
   border-color: #555;
 }
 
+/* SITEMAP HOVER EFFECTS */
+
+.sitemap-link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.sitemap-link:hover {
+  color: var(--color-primary);
+  transform: translateX(5px);
+}
+
+.sitemap-heading {
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--color-base-300);
+  padding-bottom: 6px;
+}
+
+.sitemap-card {
+  transition: all 0.3s ease;
+}
+
+.sitemap-card:hover {
+  transform: translateY(-5px);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {
