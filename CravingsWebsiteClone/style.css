@@ -109,9 +109,9 @@ body {
 .search-box i {
   position: absolute;
   top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  color: var(--color-secondary);
+  left: 150px;
+  transform: translateY(-100%);
+  color: var(--color-base-300);
 }
 
 /* ===== RESTAURANTS ===== */
@@ -153,10 +153,10 @@ section h2 {
 /* ===== BADGES ===== */
 .badge {
   background-color: var(--color-base-200);
-  color: var(--color-base-content);
+  color: var(--color-neutral);
   border-radius: 20px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 120px;
 }
 
 /* ===== STATS ===== */

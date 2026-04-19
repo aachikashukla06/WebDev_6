@@ -31,7 +31,7 @@
 
     /* HERO */
     .hero {
-      height: 80vh;
+      height: 90vh;
       background: url('restaurant3.jpg') center/cover;
       position: relative;
     }
@@ -65,14 +65,14 @@
     .search-box 
     {
       position: relative;
-      max-width: 650px;
+      max-width: 800px;
       margin: auto;
     }
 
     .search-box input
      {
-      padding-left: 40px;
-      border-radius: 50px;
+      padding-left: 120px;
+      border-radius: 100px;
       height: 50px;
     }
 
@@ -83,6 +83,10 @@
       left: 15px;
       transform: translateY(-50%);
     }
+    .search-input::placeholder {
+    color: #d35400;
+    opacity: 1;
+  }
 
     /* CARD */
     .card
@@ -94,7 +98,7 @@
 
     .card img
      {
-      height: 180px;
+      height: 200px;
       object-fit: cover;
     }
 
@@ -160,10 +164,23 @@
     <a class="btn btn-main rounded px-5">Sign Up</a>
     <a class="btn btn-light rounded px-4">Order Now</a>
 
-    <div class="search-box mt-4">
-      <i class="bi bi-search"></i>
-      <input type="text" class="form-control" placeholder="Search restaurants or dishes...">
-    </div>
+  <div class="d-flex justify-content-center mt-4">
+  
+  <div class="d-flex align-items-center px-3 py-2 bg-white shadow-sm"
+       style="border-radius:50px; width:500px;">
+    
+    <i class="bi bi-search text-danger me-2"></i>
+    
+    <input type="text"
+           class="form-control border-0 shadow-none p-0 search-input"
+           placeholder="Search restaurants or dishes..."
+           style="outline:none;">
+  </div>
+</div>
+  
+  </div>
+
+</div>
 
   </div>
 </section>
@@ -202,35 +219,73 @@
   </div>
 </section>
 
+
 <!-- STATS -->
-<section class="py-5 text-center bg-light">
+<section class="py-5 text-center" style="background-color:#e9dfd6;">
   <div class="container">
-    <h2 class="fw-bold">Cravings by the Numbers</h2>
-    <div class="row mt-4">
-      <div class="col-md-3"><h2 class="text-danger">2.5M+</h2><p>Deliveries</p></div>
-      <div class="col-md-3"><h2 class="text-danger">500K+</h2><p>Customers</p></div>
-      <div class="col-md-3"><h2 class="text-danger">5K+</h2><p>Restaurants</p></div>
-      <div class="col-md-3"><h2 class="text-danger">1K+</h2><p>Riders</p></div>
+    
+    <h2 class="fw-bold mb-2">Cravings by the Numbers</h2>
+    <p class="text-muted mb-5">
+      See why millions trust us for their daily food delivery needs
+    </p>
+
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h1 class="fw-bold mb-3" style="color:#d35400;">2.5M+</h1>
+          <h6 class="fw-bold">Successful Deliveries</h6>
+          <p class="text-muted small mb-0">
+            Orders delivered with care and precision
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h1 class="fw-bold mb-3" style="color:#e84393;">500K+</h1>
+          <h6 class="fw-bold">Happy Customers</h6>
+          <p class="text-muted small mb-0">
+            Satisfied users enjoying delicious food
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h1 class="fw-bold mb-3" style="color:#d35400;">5K+</h1>
+          <h6 class="fw-bold">Partner Restaurants</h6>
+          <p class="text-muted small mb-0">
+            Restaurants serving amazing cuisine
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h1 class="fw-bold mb-3" style="color:#e84393;">1K+</h1>
+          <h6 class="fw-bold">Active Delivery Partners</h6>
+          <p class="text-muted small mb-0">
+            Riders ensuring quick and safe delivery
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
+
 <!-- TESTIMONIAL -->
-<!-- <section class="py-5 text-center">
-  <div class="container">
-    <h2 class="fw-bold">What Our Customers Say</h2>
-    <div class="row mt-4">
-      <div class="col-md-4"><div class="p-4 shadow-lg shadow rounded">⭐⭐⭐⭐⭐<h5><b>Amazing Service</b></h5></div></div>
-      <div class="col-md-4"><div class="p-4 shadow-lg shadow rounded">⭐⭐⭐⭐⭐<h5><b>Best App Ever</b></h5></div></div>
-      <div class="col-md-4"><div class="p-4 shadow-lg shadow rounded">⭐⭐⭐⭐⭐<h5><b>Excellent Choices</b></h5></div></div>
-    </div>
-  </div>
-</section> -->
 <section class="py-5" style="background: var(--color-base-200);">
   <div class="container text-center">
 
     <h2 class="fw-bold mb-2" style="color: var(--color-base-content);">
-      What Our Customers Say
+     <b> What Our Customers Say </b>
     </h2>
 
     <p class="mb-5" style="color: var(--color-secondary);">
@@ -241,7 +296,7 @@
 
       <!-- CARD 1 -->
       <div class="col-md-4">
-        <div class="p-4 rounded shadow-sm h-100 text-start"
+        <div class="p-4 rounded shadow-lg h-100 text-start"
              style="background: var(--color-base-100);">
 
           <!-- Stars -->
@@ -279,7 +334,7 @@
 
       <!-- CARD 2 -->
       <div class="col-md-4">
-        <div class="p-4 rounded shadow-sm h-100 text-start"
+        <div class="p-4 rounded shadow-lg h-100 text-start"
              style="background: var(--color-base-100);">
 
           <div class="mb-2" style="color: #facc15; font-size: 18px;">
@@ -315,7 +370,7 @@
 
       <!-- CARD 3 -->
       <div class="col-md-4">
-        <div class="p-4 rounded shadow-sm h-100 text-start"
+        <div class="p-4 rounded shadow-lg h-100 text-start"
              style="background: var(--color-base-100);">
 
           <div class="mb-2" style="color: #facc15; font-size: 18px;">
