@@ -1,9 +1,24 @@
-console.log("Hello World");
-console.log("Welcome to JavaScript");
+console.log("Hello World!");
+console.log("Hello World 12123");
+
+let a = 5;
+
+a = 10;
+
+let b = true;
+
+const pi = 3.14;
 
 
-    int a=5;
+console.log("task complete");
 
-    var b=10;
+let x = 10;
+let y = "10";
 
-    
+console.log(typeof x);
+console.log(typeof y);
+
+
+console.log(x == y);
+
+console.log(x === y);
