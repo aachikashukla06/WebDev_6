@@ -17,6 +17,8 @@ function addNewTask() {
         LI.remove();
     }
 
+    
+
 
 
 
