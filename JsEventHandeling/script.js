@@ -27,6 +27,9 @@ function ChangeBulbColor() {
   document.getElementById("ABCD").style.color = color;
 }
 
+  
+
+
 function reset() {
   window.location.reload();
 }
