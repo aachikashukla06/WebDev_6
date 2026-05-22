@@ -11,12 +11,7 @@ async function getData(value) {
   });
 }
 
-// getData(1)
-//   .then(() => getData(2))
-//   .then(() => getData(3))
-//   .then(() => getData(4))
-//   .then(() => getData(5))
-//   .catch((rej) => console.log(rej));
+
 
 
 
