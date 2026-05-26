@@ -1,0 +1,106 @@
+[
+  {
+    "Country": "United States",
+    "Currency_Name": "US Dollar",
+    "Currency_Code": "USD",
+    "Country_Code": "US"
+  },
+
+  {
+    "Country": "India",
+    "Currency_Name": "Indian Rupee",
+    "Currency_Code": "INR",
+    "Country_Code": "IN"
+  },
+
+  {
+    "Country": "United Kingdom",
+    "Currency_Name": "Pound Sterling",
+    "Currency_Code": "GBP",
+    "Country_Code": "GB"
+  },
+
+  {
+    "Country": "European Union",
+    "Currency_Name": "Euro",
+    "Currency_Code": "EUR",
+    "Country_Code": "FR"
+  },
+
+  {
+    "Country": "Japan",
+    "Currency_Name": "Japanese Yen",
+    "Currency_Code": "JPY",
+    "Country_Code": "JP"
+  },
+
+  {
+    "Country": "Canada",
+    "Currency_Name": "Canadian Dollar",
+    "Currency_Code": "CAD",
+    "Country_Code": "CA"
+  },
+
+  {
+    "Country": "Australia",
+    "Currency_Name": "Australian Dollar",
+    "Currency_Code": "AUD",
+    "Country_Code": "AU"
+  },
+
+  {
+    "Country": "China",
+    "Currency_Name": "Chinese Yuan",
+    "Currency_Code": "CNY",
+    "Country_Code": "CN"
+  },
+
+  {
+    "Country": "Russia",
+    "Currency_Name": "Russian Ruble",
+    "Currency_Code": "RUB",
+    "Country_Code": "RU"
+  },
+
+  {
+    "Country": "United Arab Emirates",
+    "Currency_Name": "UAE Dirham",
+    "Currency_Code": "AED",
+    "Country_Code": "AE"
+  },
+
+  {
+    "Country": "Singapore",
+    "Currency_Name": "Singapore Dollar",
+    "Currency_Code": "SGD",
+    "Country_Code": "SG"
+  },
+
+  {
+    "Country": "Pakistan",
+    "Currency_Name": "Pakistani Rupee",
+    "Currency_Code": "PKR",
+    "Country_Code": "PK"
+  },
+
+  {
+    "Country": "Bangladesh",
+    "Currency_Name": "Bangladeshi Taka",
+    "Currency_Code": "BDT",
+    "Country_Code": "BD"
+  },
+
+  {
+    "Country": "Nepal",
+    "Currency_Name": "Nepalese Rupee",
+    "Currency_Code": "NPR",
+    "Country_Code": "NP"
+  },
+
+  {
+    "Country": "Sri Lanka",
+    "Currency_Name": "Sri Lankan Rupee",
+    "Currency_Code": "LKR",
+    "Country_Code": "LK"
+  }
+]
