@@ -10,9 +10,9 @@ const c1 = document.getElementById("country1"),
 
 
 // Load Countries
-fetch("codes.json")
-.then(res => res.json())
-.then(data => {
+  fetch("codes.json")
+  .then(res => res.json())
+  .then(data => {
 
   data.forEach(c => {
 
