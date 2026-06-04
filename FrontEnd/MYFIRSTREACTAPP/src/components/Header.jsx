@@ -5,13 +5,17 @@ function Header() {
     <>
       <div className="bg-primary-subtle p-2 d-flex justify-content-between">
         <div className="text-primary fs-4 fw-bold">< FaWifi /><span> My Company </span></div>
-
+        <div className="text-secondary fs-5 fw-bold">Welcome to our website!</div>
+        
+        
         <div className="d-flex gap-4">
           <Link to={"/"}>Home</Link>
           <Link to={"/about"}>About</Link>
           <Link to={"/product"}>Product</Link>
           <Link to={"/contact-us"}>Contact Us</Link>
         </div>
+
+
         <div className="d-flex gap-3">
           <Link to={"/login"}>
             <button className="btn btn-outline-primary">Login</button>
