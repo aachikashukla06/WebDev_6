@@ -11,6 +11,9 @@ const Product = () => {
       <span>12</span>
       <p>12</p>
       <button className="bg-orange-400 rounded-full px-4 py-2">Add to Cart</button>
+      <p>Description</p>
+      <input type="text" className="border rounded w-full p-2" placeholder="Enter quantity" />
+      <p>Price: $1000</p>
     </div>
   );
 };
