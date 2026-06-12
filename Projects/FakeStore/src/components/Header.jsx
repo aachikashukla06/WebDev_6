@@ -4,6 +4,9 @@ function Header() {
   return (
     <div className="bg-blue-500 text-white p-5 flex justify-between">
       <h1 className="text-2xl font-bold">FakeStore (a place where you can buy fake stuff🏪</h1>
+        Bgjfhfwgwfjj
+
+
 
       <div className="flex gap-6">
         <Link to="/">Home</Link>
