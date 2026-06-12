@@ -1,9 +1,11 @@
-function Footer() {
+import React from "react";
+
+const Footer = () => {
   return (
-    <div className="bg-black text-white text-center p-4 mt-10">
-      © 2026 FakeStore
-    </div>
+    <>
+      <div>Footer</div>
+    </>
   );
-}
+};
 
 export default Footer;
