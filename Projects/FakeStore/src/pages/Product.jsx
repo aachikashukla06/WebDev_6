@@ -1,79 +1,70 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const Products = () => {
-  const product = {
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
-    title: "Premium Sports Shoes",
-    description:
-      "Comfortable and stylish sports shoes perfect for daily wear and running.",
-    rating: 4.5,
-    reviews: 245,
-    price: 1999,
-    originalPrice: 2999,
+import loading from "../assets/loading.gif";
+
+const Product = () => {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const fetchProduct = async () => {
+    try {
+      setIsLoading(true);
+
+      const res = await fetch("https://fakestoreapi.com/products");
+      const data = await res.json();
+      setProducts(data);
+    } catch (error) {
+      setIsError(true);
+      setErrorMessage(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
+  useEffect(() => {
+    fetchProduct();
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-      <div className="w-80 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-        {/* Product Image */}
-        <img
-          src={product.image}
-          alt={product.title}
-          className="w-full h-64 object-cover"
-        />
-
-        {/* Product Details */}
-        <div className="p-4">
-          <h2 className="text-lg font-semibold text-gray-800">
-            {product.title}
-          </h2>
-
-          <p className="text-sm text-gray-600 mt-2">{product.description}</p>
-
-          {/* Ratings */}
-          <div className="flex items-center mt-3">
-            <span className="bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
-              {product.rating} ★
-            </span>
-            <span className="ml-2 text-sm text-gray-500">
-              ({product.reviews} Reviews)
-            </span>
-          </div>
-
-          {/* Price */}
-          <div className="mt-3 flex items-center gap-2">
-            <span className="text-2xl font-bold text-gray-900">
-              ₹{product.price}
-            </span>
-
-            <span className="text-gray-500 line-through">
-              ₹{product.originalPrice}
-            </span>
-
-            <span className="text-green-600 font-medium">
-              {Math.round(
-                ((product.originalPrice - product.price) /
-                  product.originalPrice) *
-                  100,
-              )}
-              % Off
-            </span>
-          </div>
-
-          {/* Buttons */}
-          <div className="mt-5 flex gap-2">
-            <button className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 rounded-lg">
-              Add to Cart
-            </button>
-
-            <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded-lg">
-              Buy Now
-            </button>
-          </div>
+    <>
+      {isLoading ? (
+        <div className="w-full h-[90vh] flex justify-center items-center">
+          <img src={loading} alt="" className="w-50" />
         </div>
-      </div>
-    </div>
+      ) : (
+        <div className="p-10 grid grid-cols-4 gap-5">
+          {products.length > 0 &&
+            products.map((product, index) => (
+              <div className="w-75 border rounded h-100 p-3" key={index}>
+                <div className="w-full h-40">
+                  <img
+                    src={product.image}
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex flex-col justify-between h-50">
+                  <div>
+                    <p className="text-xl">{product.title}</p>
+                    <p className="text-sm capitalize text-gray-500">
+                      {product.category}
+                    </p>
+                    <p>₹ {product.price * 100}</p>
+                    <p>{product.rating.rate}/5</p>
+                  </div>
+
+                  <button className="bg-orange-400 rounded-full px-4 py-2">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            ))}
+        </div>
+      )}
+    </>
   );
 };
 
-export default Products;
+export default Product ;
