@@ -1,35 +1,27 @@
 import User from "../models/user.model.js";
 
-export const RegisterUser = async (req, res) => {
+export const RegisterUser = async (req, res, next) => {
   try {
-    console.log(0);
     const { fullName, email, password, phone, gender, dob } = req.body;
 
-    
-    if (!fullName || !email || !password || !phone || !gender || !dob) 
-      {
-      res.status(400).json({ message: "All Feilds Required" });
+    if (!fullName || !email || !password || !phone || !gender || !dob) {
+      const error = new Error("All fields Required");
       error.statusCode = 400;
       return next(error);
     }
 
-    
-
     const existingUser = await User.findOne({ email });
-    if (existingUser) 
-        {
-      res.status(409).json({ message: "Email Already Registered" });
+    if (existingUser) {
+      const error = new Error("Email already registred");
       error.statusCode = 409;
       return next(error);
     }
-    console.log(0);
-    const photoUrl = "https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}";
 
+    const photoUrl = `https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}`;
 
-    const photo =
-    {
+    const photo = {
       url: photoUrl,
-      publicId:null,
+      publicId: null,
     };
 
     const newUser = await User.create({
@@ -39,28 +31,50 @@ export const RegisterUser = async (req, res) => {
       phone,
       gender,
       dob,
-      photo
+      photo,
     });
-      
-    res.status(201).json({message:"user created successfully"});
-  } catch (error) {
-    error.statusCode = 500;
-    return next(error);
-  };
 
-  {
-    res.status(500).json({ message: "Internal server error" });
+    res.status(201).json({ message: "User Created Successfully" });
+  } catch (error) {
+    console.log(error.message);
+    next();
   }
 };
 
+export const LoginUser = async(req, res, next) => {
+  try{
+    const{email,password}= req.body;
 
-export const LoginUser = (req, res) =>
-   {
-  res.json({ message: "Login Successfull from Controller" });
+    if (!email ||!password){
+      const error = new Error("All field Required");
+      error.statusCode = 400;
+      return next(error);
+    }
+    const existingUser = await User.findOne({ email });
+    if (!existingUser) {
+      const error = new Error("Email not registred");
+      error.statusCode = 404;
+      return next(error);
+    }
+
+    if(password!== existingUser.password){
+      const error = new Error("Incorrect Password");
+      error.statusCode = 401;
+      return next(error);
+    }
+    res.status(200).json({
+      message:"Welcome Back",
+      data: existingUser,
+    });
+
+  }
+  catch (error){
+    console.log(error.message);
+    next();
+  }
+
 };
 
-export const LogoutUser = (req, res) => 
-  {
+export const LogoutUser = (req, res) => {
   res.json({ message: "Logout Successfull from Controller" });
 };
-
