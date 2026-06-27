@@ -8,8 +8,9 @@ import connectDB from "./src/config/dbConnection.config.js";
 
 const app = express();
 
-app.use(express.json());
 
+
+app.use(express.json());
 app.use("/auth", AuthRouter);
 app.use("/public", PublicRouter);
 
