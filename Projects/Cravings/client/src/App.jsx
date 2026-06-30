@@ -5,11 +5,12 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ContactUs from "./pages/ContactUs";
-
+import{Toaster} from "react-hot-toast";
 const App = () => {
   return (
     <>
       <BrowserRouter>
+      <Toaster />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
