@@ -18,6 +18,7 @@ const Navbar = () => {
             Register
           </Link>
           <Link to={"/contact-us"} className="hover:underline">
+            
             Contact us
           </Link>
         </div>

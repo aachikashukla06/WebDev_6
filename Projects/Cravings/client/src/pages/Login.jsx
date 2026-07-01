@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import deliveryboy from "../assets/deliberyboy.png";
-import api from "../config/api.config.js";
+import api from "../config/api.config";
 import toast from "react-hot-toast";
+
 const Login = () => {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
@@ -31,17 +32,20 @@ const Login = () => {
       password: loginData.password,
     };
 
-  
-try {
+    try {
       const res = await api.post("/auth/login", payload);
       toast.success(res.data.message);
-      console.log(res.data.message);
+      // console.log(res.data.data.photo);
+      sessionStorage.setItem("UserData", JSON.stringify(res.data.data));
+      navigate("/user/dashboard");
     } catch (error) {
-      toast.error(res?.data?.message + " | " + error.response?.data?.message || error.message);
+      toast.error(
+        error.response.status + " | " + error.response?.data?.message ||
+          error.message,
+      );
     }
-
   };
-  
+
   const inputClass =
     "border p-2 rounded focus:outline-none focus:ring-2 focus:ring-(--accent)";
 
