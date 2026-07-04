@@ -50,80 +50,158 @@ const Login = () => {
   };
 
   const inputClass =
-    "border p-2 rounded focus:outline-none focus:ring-2 focus:ring-(--accent)";
+    "mt-2 w-full rounded-xl border p-3 focus:ring-2 focus:ring-orange-500 outline-none";
+
+  const PasswordInput = ({ loginData, handleChange }) => (
+    <div>
+      <label className="font-semibold">Password</label>
+      <input
+        type="password"
+        name="password"
+        value={loginData.password}
+        onChange={handleChange}
+        placeholder="Enter your password"
+        className={inputClass}
+      />
+    </div>
+  );
 
   return (
-    <>
-      <div className="min-h-[90vh] bg-linear-to-r from-(--secondary) to-(--primary) grid grid-cols-2 p-10">
-        <div className="hidden md:block">
-          <img src={deliveryboy} alt="" className="rotate-y-180" />
-        </div>
-        <div className="w-2xl bg-(--background) rounded shadow p-10 flex flex-col justify-center">
-          <div className="text-xl font-semibold mb-4">Welcome Back!</div>
+  <div
+    className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
+    style={{
+      backgroundImage:
+        "url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80')",
+    }}
+  >
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-black/60"></div>
 
-          <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
-            {/* Email */}
-            <div className="col-span-2 flex flex-col gap-2">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={loginData.email}
-                onChange={handleChange}
-                className={inputClass}
-              />
-            </div>
+    <div className="relative w-full max-w-5xl grid md:grid-cols-2 overflow-hidden rounded-3xl shadow-2xl backdrop-blur-md bg-white/10 border border-white/20">
 
-            {/* Password */}
-            <div className="col-span-2 flex flex-col gap-2">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={loginData.password}
-                onChange={handleChange}
-                className={inputClass}
-              />
-            </div>
+      {/* Left Side */}
+      <div className="hidden md:flex flex-col justify-center items-center text-white p-10">
+        <img
+          src={deliveryboy}
+          alt="Delivery Boy"
+          className="w-80 drop-shadow-2xl animate-"
+        />
 
-            {validateError && (
-              <p className="text-red-500 text-sm col-span-2">{validateError}</p>
-            )}
+        <h1 className="text-5xl font-bold mt-6">
+          🍕 Cravings
+        </h1>
+
+        <p className="text-center mt-4 text-lg text-gray-200">
+          Delicious food delivered to your doorstep.
+          <br />
+          Login and satisfy your cravings!
+        </p>
+      </div>
+
+      {/* Right Side */}
+      <div className="bg-white/90 backdrop-blur-xl p-10 flex flex-col justify-center">
+
+        <h2 className="text-4xl font-bold text-center mb-2">
+          Welcome Back 👋
+        </h2>
+
+        <p className="text-gray-500 text-center mb-8">
+          Login to continue ordering your favourite meals.
+        </p>
+
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5"
+        >
+
+          {/* Email */}
+          <div>
+            <label className="font-semibold">
+              Email
+            </label>
+
+            <input
+              type="email"
+              name="email"
+              value={loginData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              className={inputClass}
+            />
+          </div>
+          
+          {/* Password */}
+
+          <PasswordInput
+            loginData={loginData}
+            handleChange={handleChange}
+          />
+
+          {validateError && (
+            <p className="text-red-500">
+              {validateError}
+            </p>
+          )}
+
+          <div className="flex justify-between text-sm">
+
+            <label className="flex items-center gap-2">
+              <input type="checkbox" />
+              Remember Me
+            </label>
 
             <button
-              type="submit"
-              className="col-span-2 mt-2 bg-(--primary) text-white py-2 px-4 rounded hover:bg-(--accent)"
+              type="button"
+              className="text-orange-600 hover:underline"
             >
-              Login
+              Forgot Password?
             </button>
-          </form>
 
-          <div className="mt-6 text-center space-y-2">
-            <p className="text-sm">
-              Don't have an account?{" "}
-              <button
-                onClick={() => navigate("/register")}
-                className="text-(--primary) hover:underline font-semibold"
-              >
-                Register here
-              </button>
-            </p>
-            <p className="text-sm">
-              Having Trouble?{" "}
-              <button
-                onClick={() => navigate("/contact")}
-                className="text-(--primary) hover:underline font-semibold"
-              >
-                Contact Us
-              </button>
-            </p>
           </div>
+
+          <button
+            type="submit"
+            className="w-full bg-orange-500 hover:bg-orange-600 transition duration-300 text-white py-3 rounded-xl font-semibold text-lg shadow-lg"
+          >
+            🍔 Login
+          </button>
+
+        </form>
+
+        <div className="text-center mt-8 space-y-3">
+
+          <p>
+            Don't have an account?
+
+            <button
+              onClick={() => navigate("/register")}
+              className="ml-2 text-orange-600 font-bold hover:underline"
+            >
+              Register
+            </button>
+
+          </p>
+
+          <p>
+            Need Help?
+
+            <button
+              onClick={() => navigate("/contact")}
+              className="ml-2 text-orange-600 font-bold hover:underline"
+            >
+              Contact Us
+            </button>
+
+          </p>
+
         </div>
+
       </div>
-    </>
-  );
+
+    </div>
+  </div>
+);
+
 };
 
 export default Login;
