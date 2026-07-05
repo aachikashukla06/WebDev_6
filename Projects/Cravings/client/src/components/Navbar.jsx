@@ -1,115 +1,101 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logoLight from "../assets/transparentLogoLight.png";
 import { useAuth } from "../context/AuthContext";
-import { AiOutlineLogout } from "react-icons/ai";
-import { FaUtensils } from "react-icons/fa";
-import api from "../config/api.config.js";
+import { FaPowerOff } from "react-icons/fa";
 import toast from "react-hot-toast";
+import api from "../config/api.config";
 
 const Navbar = () => {
-  const { user, setUser, isLogin, setIsLogin } = useAuth();
+  const { user, isLogin, role, setUser, setIsLogin, setRole } = useAuth();
   const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    //console.log("Handle Navigate", role);
+
+    if (role === "restaurant") {
+      navigate("/restaurant-dashboard");
+    } else if (role === "rider") {
+      navigate("/rider-dashboard");
+    } else if (role === "admin") {
+      navigate("/admin-dashboard");
+    } else {
+      navigate("/customer-dashboard");
+    }
+  };
 
   const handleLogout = async () => {
     try {
       const res = await api.get("/auth/logout");
-
-      sessionStorage.removeItem("UserData");
-
-      setIsLogin(false);
-      setUser(false);
-
-      navigate("/");
-
       toast.success(res.data.message);
+
+      sessionStorage.removeItem("cravingUser");
+      setUser(null);
+      setIsLogin(false);
+      setRole(null);
+      navigate("/");
     } catch (error) {
       toast.error(
-        error.response?.status +
-          " | " +
-          error.response?.data?.message || error.message
+        error.response?.data?.message ||
+          "Unknown error occurred during registration. Please try again.",
       );
     }
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-white/70 shadow-lg border-b border-white/30 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-        {/* Logo */}
-
-        <Link
-          to="/"
-          className="flex items-center gap-3 text-3xl font-bold text-orange-600 hover:scale-105 transition duration-300"
-        >
-          <FaUtensils className="text-4xl animate-pulse" />
-
-          <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-            Cravings
-          </span>
-        </Link>
-
-        {/* Navigation */}
-
-        <div className="flex items-center gap-8 font-medium text-gray-700">
-          <Link
-            to="/"
-            className="relative group transition duration-300"
-          >
-            Home
-
-            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+    <>
+      <div className="sticky top-0 z-99 flex items-center justify-between px-12 py-1 bg-(--color-primary) text-white w-full h-16 shadow-md">
+        <div className="h-full">
+          <Link to="/">
+            <img src={logoLight} alt="Logo" className="w-fit h-full" />{" "}
           </Link>
-
-          <Link
-            to="/contact-us"
-            className="relative group transition duration-300"
-          >
-            Contact
-
-            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-          </Link>
-
-          {isLogin ? (
-            <div className="flex items-center gap-4 pl-6 border-l border-gray-300">
-              <img
-                src={user.photo}
-                alt=""
-                className="w-11 h-11 rounded-full object-cover border-2 border-orange-500 shadow-md hover:scale-110 transition duration-300"
-              />
-
-              <Link
-                to="/user/dashboard"
-                className="font-semibold text-gray-800 hover:text-orange-600 transition"
-              >
-                {user.fullName}
-              </Link>
-
-              <button
-                onClick={handleLogout}
-                className="p-2 rounded-full bg-red-100 hover:bg-red-500 hover:text-white text-red-500 transition-all duration-300 hover:rotate-12"
-              >
-                <AiOutlineLogout size={22} />
-              </button>
-            </div>
-          ) : (
-            <div className="flex gap-4">
-              <Link
-                to="/login"
-                className="px-5 py-2 rounded-full border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition duration-300"
-              >
-                Login
-              </Link>
-
-              <Link
-                to="/register"
-                className="px-5 py-2 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg hover:scale-105 hover:shadow-xl transition duration-300"
-              >
-                Register
-              </Link>
-            </div>
-          )}
         </div>
+
+        {isLogin ? (
+          <div className="flex items-center gap-2">
+            <button
+              className="flex gap-2 items-center text-(--color-primary-content) border border-transparent hover:border-(--color-primary-content)  px-3 py-1 rounded"
+              title="Go to Dashboard"
+              onClick={handleNavigate}
+            >
+              <img
+                src={user?.photo}
+                alt={user?.fullName}
+                className="w-12 h-12 rounded-full object-cover object-top"
+              />
+              <div className="flex flex-col items-start">
+                <span className="text-base">{user?.fullName}</span>
+                <span className="text-xs text-(--color-primary-content)/80">
+                  Customer
+                </span>
+              </div>
+            </button>
+            <button
+              onClick={handleLogout}
+              className="text-(--color-primary-content) border border-transparent hover:border-(--color-primary-content) hover:bg-(--color-error) px-3 py-3 rounded"
+              title="Logout"
+            >
+              <FaPowerOff />
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center gap-2">
+            <Link
+              to="/login"
+              className="text-(--color-primary-content) border border-transparent hover:border-(--color-primary-content) px-3 py-1 rounded"
+            >
+              Login
+            </Link>
+            <Link
+              to="/register/customer"
+              className="bg-(--color-primary-content) text-(--color-primary) hover:bg-(--color-primary) hover:text-(--color-primary-content) border px-3 py-1 rounded"
+            >
+              Register
+            </Link>
+          </div>
+        )}
       </div>
-    </nav>
+    </>
   );
 };
 
