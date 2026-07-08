@@ -13,7 +13,7 @@ export const EditUserProfile = async (req, res, next) => {
       error.statusCode = 400;
       return next(error);
     }
-
+                                   
     const existingUser = await User.findOne({ email });
     if (!existingUser) {
       const error = new Error("Email not registred");
@@ -34,6 +34,8 @@ export const EditUserProfile = async (req, res, next) => {
       });
 
       console.log(result);
+      existingUser.photo.url = result.secure_url;
+      existingUser.photo.publicId = result.public_id;
     }
 
     existingUser.fullName = fullName;
@@ -46,6 +48,6 @@ export const EditUserProfile = async (req, res, next) => {
       .json({ message: "User Updated Sucessfully", data: existingUser });
   } catch (error) {
     console.log(error.message);
-    next();
+    next(error);
   }
 };

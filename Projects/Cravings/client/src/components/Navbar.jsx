@@ -4,7 +4,7 @@ import logoLight from "../assets/transparentLogoLight.png";
 import { useAuth } from "../context/AuthContext";
 import { FaPowerOff } from "react-icons/fa";
 import toast from "react-hot-toast";
-import api from "../config/api.config";
+import api from "../config/api.config.js";
 
 const Navbar = () => {
   const { user, isLogin, role, setUser, setIsLogin, setRole } = useAuth();
@@ -59,7 +59,7 @@ const Navbar = () => {
               onClick={handleNavigate}
             >
               <img
-                src={user?.photo}
+                src={user?.photo.url}
                 alt={user?.fullName}
                 className="w-12 h-12 rounded-full object-cover object-top"
               />
