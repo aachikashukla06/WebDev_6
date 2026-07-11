@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import contactBg from "../assets/contactPage.jpg";
 import api from "../config/api.config.js";
 
-const ContactUs = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -169,4 +169,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Contact;

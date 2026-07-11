@@ -91,7 +91,7 @@ const CarouselComponent = () => {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div>   
     </div>
   );
 };

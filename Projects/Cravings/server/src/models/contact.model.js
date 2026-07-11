@@ -31,7 +31,10 @@ const ContactSchema = mongoose.Schema(
   {
     timestamps: true,
   },
+  
 );
+
+
 
 const Contact = mongoose.model("contact", ContactSchema);
 

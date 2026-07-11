@@ -3,16 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import logoCircle from "../assets/circleLogo.png";
 
-const Footer = () => 
-  {
+const Footer = () => {
   const location = useLocation().pathname;
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
 
   if (location.toLowerCase().includes("dashboard")) return null;
 
-  return 
-   (
+  return (
     <footer className="bg-(--color-neutral) text-(--color-neutral-content) py-8">
       <div className="max-w-7xl mx-auto px-4">
         {/* Footer Content Grid */}
@@ -21,7 +19,7 @@ const Footer = () =>
           --- Your favorite food delivery platform connecting customers with
           restaurants and riders. ---
         </p>
-                                            
+
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           {/* About Section */}
           <div>
@@ -32,7 +30,6 @@ const Footer = () =>
             />
           </div>
 
-
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
@@ -41,7 +38,6 @@ const Footer = () =>
                 className="text-sm hover:text-(--color-primary) transition-colors duration-200 cursor-pointer"
                 onClick={() => navigate("/")}
               >
-
                 Home
               </li>
               <li
