@@ -2,28 +2,23 @@ import mongoose from "mongoose";
 
 const ContactSchema = mongoose.Schema(
   {
-    fullName: 
-    {
+    fullName: {
       type: String,
       required: true,
     },
-    email: 
-    {
+    email: {
       type: String,
       required: true,
     },
-    phone: 
-    {
-      type: String,
-      required: true,
-    },  
-    subject: 
-    {
+    phone: {
       type: String,
       required: true,
     },
-    message: 
-    {
+    subject: {
+      type: String,
+      required: true,
+    },
+    message: {
       type: String,
       required: true,
     },
@@ -31,10 +26,7 @@ const ContactSchema = mongoose.Schema(
   {
     timestamps: true,
   },
-  
 );
-
-
 
 const Contact = mongoose.model("contact", ContactSchema);
 
