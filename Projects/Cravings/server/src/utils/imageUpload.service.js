@@ -1,19 +1,24 @@
 import cloudinary from "../config/cloudinary.config.js";
 
-export const uploadMultipleImages = async (Images, storageLocation) => {
-  try {
-    const uploadMultiple = Images.map(async (image) => {
+export const uploadMultipleImages = async (Images, storageLocation) =>
+   {
+  try 
+  {
+    const uploadMultiple = Images.map(async (image) =>                            
+      {
       const b64 = Buffer.from(image.buffer).toString("base64");
       const dataURI = `data:${image.mimetype};base64,${b64}`;
 
-      const result = await cloudinary.uploader.upload(dataURI, {
+      const result = await cloudinary.uploader.upload(dataURI,
+      { 
         folder: storageLocation,
         width: 500,
         height: 500,
         crop: "fill",
       });
-
-      return {
+                        
+ 
+       return {
         url: result.secure_url,
         publicId: result.public_id,
       };
@@ -26,9 +31,11 @@ export const uploadMultipleImages = async (Images, storageLocation) => {
   }
 };
 
-export const deleteMultipleImages = async (Images) => {
+export const deleteMultipleImages = async (Images) => 
+  {
   try {
-    const deleteMultiple = Images.map(async (image) => {
+    const deleteMultiple = Images.map(async (image) =>
+       {
       await cloudinary.uploader.destroy(image.publicId);
     });
     await Promise.all(deleteMultiple);
@@ -38,7 +45,8 @@ export const deleteMultipleImages = async (Images) => {
   }
 };
 
-export const deleteSingleImage = async (image) => {
+export const deleteSingleImage = async (image) => 
+  {
   try {
     await cloudinary.uploader.destroy(image.publicId);
   } catch (error) {
@@ -47,12 +55,15 @@ export const deleteSingleImage = async (image) => {
   }
 };
 
-export const UploadSingleImage = async (image, storageLocation) => {
-  try {
+export const UploadSingleImage = async (image, storageLocation) => 
+  {
+  try
+   {
     const b64 = Buffer.from(image.buffer).toString("base64");
     const dataURI = `data:${image.mimetype};base64,${b64}`;
 
-    const result = await cloudinary.uploader.upload(dataURI, {
+    const result = await cloudinary.uploader.upload(dataURI, 
+      {
       folder: storageLocation,
       width: 500,
       height: 500,
