@@ -59,8 +59,8 @@ const Navbar = () => {
               onClick={handleNavigate}
             >
               <img
-                src={user?.photo.url}
-                alt={user?.fullName}
+                src={user?.photo?.url || logoLight}
+                alt={user?.fullName || "User"}
                 className="w-12 h-12 rounded-full object-cover object-top"
               />
               <div className="flex flex-col items-start">

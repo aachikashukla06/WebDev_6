@@ -3,7 +3,7 @@ import { MdEdit } from "react-icons/md";
 import { useAuth } from "../../context/AuthContext";
 import api from "../../config/api.config.js";
 import toast from "react-hot-toast";
-import { MdOutlineAddAPhoto } from "react-icons/md";
+import { MdOutlineAddAPhoto ,MdOutlineLockReset } from "react-icons/md";
 import PasswordChangeModal from "../commonModals/PasswordChangeModal";
 
 const RiderSetting = () => {
@@ -115,7 +115,7 @@ const RiderSetting = () => {
               <div className="relative">
                 <div className="w-36 h-36">
                   <img
-                    src={profilePicPreview || user.photo.url}
+                    src={profilePicPreview || user?.photo?.url || ""}
                     alt="Profile"
                     className="w-full h-full rounded-full object-cover border-2 border-(--color-primary)"
                   />

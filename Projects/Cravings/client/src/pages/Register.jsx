@@ -40,7 +40,11 @@ const Register = () => {
     const newErrors = {};
 
     if (!data.fullName.trim()) newErrors.fullName = "Full name is required";
-    if (!data.email.trim()) newErrors.email = "Email is required";
+    if (!data.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
     if (!data.phone.trim()) newErrors.phone = "Phone number is required";
     if (!data.gender) newErrors.gender = "Gender is required";
     if (!data.dob) newErrors.dob = "Date of birth is required";
@@ -48,7 +52,7 @@ const Register = () => {
       newErrors.password = "Password must be at least 6 characters";
     if (!data.confirmPassword)
       newErrors.confirmPassword = "Please confirm your password";
-    if (data.password !== data.confirmPassword)
+    if (data.password && data.confirmPassword && data.password !== data.confirmPassword)
       newErrors.confirmPassword = "Passwords do not match";
     if (!data.agreeTerms)
       newErrors.agreeTerms = "You must agree to terms and conditions";
@@ -68,20 +72,39 @@ const Register = () => {
       return;
     }
 
-    console.log("Form submitted:", formData);
-
     try {
-      const res = await api.post("/auth/register", {
-        ...formData,
-        email: formData.email.toLowerCase(),
+      const payload = {
+        fullName: formData.fullName.trim(),
+        email: formData.email.toLowerCase().trim(),
+        phone: formData.phone.trim(),
+        gender: formData.gender,
+        dob: formData.dob,
+        password: formData.password,
+        userType: formData.userType,
+      };
+
+      const res = await api.post("/auth/register", payload);
+      toast.success(res.data.message || "Registration successful");
+      setFormData({
+        userType: formData.userType,
+        fullName: "",
+        email: "",
+        phone: "",
+        gender: "",
+        dob: "",
+        password: "",
+        confirmPassword: "",
+        agreeTerms: false,
       });
-      toast.success(res.data.message);
       navigate("/login");
     } catch (error) {
-      toast.error(
+      const message =
         error.response?.data?.message ||
-          "Unknown error occurred during registration. Please try again.",
-      );
+        error.message ||
+        "Unknown error occurred during registration. Please try again.";
+
+      toast.error(message);
+      console.error("Registration failed:", error);
     } finally {
       setLoading(false);
     }
