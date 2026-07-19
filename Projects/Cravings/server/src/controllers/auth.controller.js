@@ -6,9 +6,11 @@ import OTP from "../models/otp.model.js";
 import { genOTPToken } from "../utils/auth.service.js";
 import { sendOTPEmail } from "../utils/email.service.js";
 
-export const RegisterUser = async (req, res, next) => {
-  try {
-    const { fullName, email, password, phone, gender, dob, userType } =
+export const RegisterUser = async (req, res, next) => 
+  {
+  try 
+  {
+    const{ fullName, email, password, phone, gender, dob, userType } =
       req.body;
 
     if (
@@ -19,7 +21,8 @@ export const RegisterUser = async (req, res, next) => {
       !gender ||
       !dob ||
       !userType
-    ) {
+    ) 
+    {
       const error = new Error("All fields Required");
       error.statusCode = 400;
       return next(error);
@@ -34,7 +37,8 @@ export const RegisterUser = async (req, res, next) => {
 
     const photoURL = `https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}`;
 
-    const photo = {
+    const photo = 
+    {
       url: photoURL,
       publicId: null,
     };

@@ -8,12 +8,13 @@ export const EditUserProfile = async (req, res, next) => {
     const newPhoto = req.file;
 
     console.log("Req Body :", req.body);
+    
     console.log("Req File :", req.file);
     if (!email || !fullName || !phone) {
       const error = new Error("All fields Required");
       error.statusCode = 400;
       return next(error);
-    }
+    }    
 
     const existingUser = await User.findOne({ email });
     if (!existingUser) {

@@ -9,7 +9,7 @@ const AdminSidebar = ({ activeTab, setActiveTab }) => {
     { name: "Overview", value: "overview", icon: <MdDashboard /> },
     { name: "Orders", value: "orders", icon: <FaShoppingCart /> },
   ];
-
+                                                              
   const settingsTab = { name: "Settings", value: "settings", icon: <IoMdSettings /> };
 
   const renderTab = (tab) => (
