@@ -22,7 +22,8 @@ app.use("/public", PublicRouter);
 app.use("/common", CommonRouter);
 app.use("/restaurant", RestaurantRouter);
 //Default API
-app.get("/", (req, res) => {
+app.get("/", (req, res) => 
+  {
   console.log("Default Get API Hit");
   res.json({ message: "Welcome to my Cravings Project" });
 });
