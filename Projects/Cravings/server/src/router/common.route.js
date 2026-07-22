@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.put(
   "/edit-profile",
-  AuthProtect,
+  AuthProtect,   
   Upload.single("displayPic"),
   EditUserProfile,
 );
