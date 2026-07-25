@@ -122,6 +122,7 @@ const Footer = () => {
         <div className="border-t border(--color-neutral) my-8"></div>
 
         {/* Bottom Section */}
+        {/* <div className="flex flex-col md:flex-row justify-between items-center"> */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Copyright */}
           <p className="text-sm text-(--color-neutral-content) mb-4 md:mb-0">
@@ -145,11 +146,11 @@ const Footer = () => {
                 Site Map
               </span>
             </Link>
-          </div>
-        </div>
+          </div>     
+        </div>    
       </div>
     </footer>
-  );
+  );      
 };
 
 export default Footer;

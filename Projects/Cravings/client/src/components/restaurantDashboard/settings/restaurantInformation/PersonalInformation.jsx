@@ -118,7 +118,7 @@ const PresonalInformation = () => {
                 <button
                   onClick={() => setIsPasswordChangeModalOpen(true)}
                   className="flex items-center gap-2 border border-(--color-primary) text-(--color-primary) px-2 py-0.5 rounded text-xs hover:bg-(--color-primary) hover:text-(--color-primary-content)"
-                >
+                >             
                   <MdOutlineLockReset /> Change Password
                 </button>
               </div>
@@ -126,16 +126,16 @@ const PresonalInformation = () => {
               <div className="flex gap-2 justify-end">
                 <button
                   onClick={handleSaveProfile}
-                  className="flex items-center gap-2 bg-(--color-primary) text-(--color-primary-content) px-2 py-0.5 rounded text-xs"
+                  className="flex items-center   gap-2 bg-(--color-primary) text-(--color-primary-content) px-2 py-0.5 rounded text-xs"
                   disabled={isLoading}
                 >
                   {isLoading ? "Saving..." : "Save Changes"}
-                </button>
+                </button>    
                 <button
                   onClick={handleCancelProfile}
                   className="flex items-center gap-2 bg-(--color-secondary) text-(--color-secondary-content) px-2 py-0.5 rounded text-xs"
                   disabled={isLoading}
-                >
+                >    
                   Cancel
                 </button>
               </div>
