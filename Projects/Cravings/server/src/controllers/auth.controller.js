@@ -14,7 +14,7 @@ export const RegisterUser = async (req, res, next) =>
       req.body;
 
     if (
-      !fullName ||
+      !fullName ||        
       !email ||
       !password ||
       !phone ||

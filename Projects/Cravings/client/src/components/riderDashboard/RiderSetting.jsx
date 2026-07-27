@@ -38,7 +38,7 @@ const RiderSetting = () => {
 
       payload.append("displayPic", profilePic);
 
-      const response = await api.put(`/user/edit-profile`, payload);
+      const response = await api.put(`/common/edit-profile`, payload);
 
       setUser(response.data.data);
       sessionStorage.setItem("cravingUser", JSON.stringify(response.data.data));
@@ -115,7 +115,7 @@ const RiderSetting = () => {
               <div className="relative">
                 <div className="w-36 h-36">
                   <img
-                    src={profilePicPreview || user?.photo?.url || ""}
+                    src={profilePicPreview || user.photo.url}
                     alt="Profile"
                     className="w-full h-full rounded-full object-cover border-2 border-(--color-primary)"
                   />

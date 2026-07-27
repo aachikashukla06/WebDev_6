@@ -8,7 +8,7 @@ const RestaurantSchema = mongoose.Schema(
       required: true,
     },
     restaurantName: { type: String, required: true },
-    address: { type: String,default: "" },
+    address: { type: String, default: "" },
     city: { type: String, default: "" },
     state: { type: String, default: "" },
     pinCode: { type: String, default: "" },
@@ -24,10 +24,14 @@ const RestaurantSchema = mongoose.Schema(
       },
     },
 
-    documents: {
+    legal: {
       type: {
         legalName: { type: String, required: true },
         companyType: { type: String, required: true },
+      },
+    },
+    documents: {
+      type: {
         gstCertificate: { type: String, required: true },
         fssaiCertificate: { type: String, required: true },
         panCard: { type: String, required: true },
@@ -70,14 +74,12 @@ const RestaurantSchema = mongoose.Schema(
           publicId: { type: String, required: true },
         },
       ],
-     
     },
     coverImage: {
       type: {
         url: { type: String, required: true },
         publicId: { type: String, required: true },
       },
-     
     },
     description: { type: String, required: true },
     restaurantType: {

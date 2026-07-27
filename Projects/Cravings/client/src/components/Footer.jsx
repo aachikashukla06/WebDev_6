@@ -117,7 +117,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
+                                
         {/* Divider */}
         <div className="border-t border(--color-neutral) my-8"></div>
 
@@ -134,7 +134,7 @@ const Footer = () => {
             <Link to="/privacy-policy">
               <span className="text-sm text-(--color-neutral-content) hover:text-(--color-primary) transition-colors duration-200">
                 Privacy Policy
-              </span>
+              </span>                   
             </Link>
             <Link to="/terms-of-service">
               <span className="text-sm text-(--color-neutral-content) hover:text-(--color-primary) transition-colors duration-200">

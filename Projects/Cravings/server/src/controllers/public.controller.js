@@ -10,7 +10,7 @@ export const ContactUsForm = async (req, res, next) => {
     }
 
     const NewContactMessage = await Contact.create({
-      fullName,
+      fullName,               
       email,
       phone,
       subject,
