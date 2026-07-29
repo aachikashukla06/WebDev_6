@@ -9,12 +9,12 @@ import { sendOTPEmail } from "../utils/email.service.js";
 export const RegisterUser = async (req, res, next) => 
   {
   try 
-  {
+  {                  
     const{ fullName, email, password, phone, gender, dob, userType } =
       req.body;
 
     if (
-      !fullName ||        
+      !fullName ||                      
       !email ||
       !password ||
       !phone ||
