@@ -13,7 +13,7 @@ export const RegisterUser = async (req, res, next) =>
     const{ fullName, email, password, phone, gender, dob, userType } =
       req.body;
 
-    if (
+    if  (
       !fullName ||                      
       !email ||
       !password ||
