@@ -12,7 +12,7 @@ import {
   RestaurantUpdateMenuItemStatus,
   RestaurantToggleMenuItemControl,
   RestaurantDeleteMenuItem,
-} from "../controller/restaurant.controller.js";
+} from "../controllers/restaurant.controller.js";
 import { RestaurantAuthProtect } from "../middleware/auth.middelware.js";
 
 const upload = multer();
