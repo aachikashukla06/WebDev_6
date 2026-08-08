@@ -12,11 +12,9 @@ const router = express.Router();
 router.put(
   "/edit-profile",
   AuthProtect,                 
-  Upload.single("displayPic"),
+  Upload.single("displayPic"),     
   EditUserProfile,
-);
+);                                 
 
 router.patch("/change-password", AuthProtect, UpdateUserPassword);
-
-
-export default router;
+export default router;                                           
