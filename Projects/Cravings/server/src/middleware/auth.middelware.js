@@ -34,7 +34,7 @@ export const AuthProtect = async (req, res, next) => {
     req.user = verifiedUser;                                         
     next();     
              
-  } catch (error) {                                              
+  } catch (error) {  21                                            
     console.log(error.message);
     next(error);             
   }                                                   
