@@ -5,6 +5,7 @@ import { LuLoaderCircle } from "react-icons/lu";
 import api from "../../config/api.config.js";
 import toast from "react-hot-toast";
 
+
 const PasswordChangeModal = ({ open, onClose }) => {
   const [formData, setFormData] = useState({
     oldPassword: "",
@@ -100,7 +101,7 @@ const PasswordChangeModal = ({ open, onClose }) => {
                   Confirm New Password
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   id="confirmNewPassword"
                   name="confirmNewPassword"
                   value={formData.confirmNewPassword}
