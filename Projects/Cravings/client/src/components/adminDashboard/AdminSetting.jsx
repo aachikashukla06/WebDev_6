@@ -7,7 +7,8 @@ import toast from "react-hot-toast";
 import { MdOutlineAddAPhoto } from "react-icons/md";
 import PasswordChangeModal from "../commonModals/PasswordChangeModal";
 
-const AdminSetting = () => {
+const AdminSetting = () => 
+  {
   const { user, setUser } = useAuth();
   const [editingProfile, setEditingProfile] = useState(false);
   const [profilePic, setProfilePic] = useState(null);

@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
-* {
+* 
+{
   box-sizing: border-box;
 }
 
-button {
+button 
+{
   cursor: pointer;
 }
+
+
 
 :root {
   /* Primary */
